@@ -5,6 +5,7 @@
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1><%: Title %>.</h1>
+                <a href="NextPage.aspx">次へ</a>
                 <h2>Modify this template to jump-start your ASP.NET application.</h2>
             </hgroup>
             <p>
@@ -12,7 +13,9 @@
                 The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET.
                 If you have any questions about ASP.NET visit
                 <a href="http://forums.asp.net/18.aspx" title="ASP.NET Forum">our forums</a>.
-            </p>
+            <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
+
+                </p>
         </div>
     </section>
 </asp:Content>

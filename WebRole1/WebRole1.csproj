@@ -209,6 +209,7 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="NextPage.aspx" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\sample-fb - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\sample-fb - Web Deploy.pubxml" />
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="NextPage.aspx.cs">
+      <DependentUpon>NextPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NextPage.aspx.designer.cs">
+      <DependentUpon>NextPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
