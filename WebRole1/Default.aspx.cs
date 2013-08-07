@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.UI;
 using Facebook.Web;
 
@@ -12,13 +13,17 @@ namespace WebRole1{
             
                 var fb = new FacebookWebClient();
 
-                //var d = fb.Query("SELECT '' FROM friend_request WHERE uid_to=me() AND unread=1");
                 dynamic me = fb.Get("me");
+                //友達リクエストの一覧取得
                 var fql = String.Format("SELECT uid_from FROM friend_request WHERE uid_to={0}", me.id);
-                //var fql = String.Format("SELECT uid,name, sex, pic,username FROM user WHERE username =\"furuya02\"");
-                var d = fb.Query(fql);
-
-                Title = d.ToString();
+                var result = fb.Query(fql);
+                //リクエストした人のidのリストを作成
+                var list = new List<string>();
+                foreach (var o in result){
+                    list.Add(o.uid_from);
+                }
+                Title = result.ToString();
+                
                 //ログオンしているFacebookユーザーに関する情報を取得
                 //dynamic myInfo = fb.Get("me");
                 //Title = myInfo.name;
